@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Neucha&family=Silkscreen&display=swap');
 
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .App{
     width: 100vw;
     height: 100vh;
@@ -29,7 +34,7 @@
 
 .input {
     display: flex;
-    width: 90%;
+    width: 95%;
     position: relative;
     align-items: center;
 }
@@ -74,20 +79,50 @@
     box-shadow: 0 0 5px black;
 }
 
+.container{
+    display: flex;
+    width: 95%;
+    margin-top: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
 .todo-list{
     display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    justify-content: space-evenly;
+    flex-direction: column;
+    width: 47%;
+    padding: 15px;
+    border-radius:5px;
+    background-color:rgb(50,195,205);
+}
+
+@media (max-width: 1100px){
+    .todo-list{
+        width: 45%;
+    }
+}
+
+.remove{
+    background-color:rgb(235,103,80)
+}
+
+.todo-heading{
+    font-size: 30px;
+    color: white;
 }
 
 .todo-item{
     display: flex;
-    width: 30%;
     border-radius: 5px;
     padding: 20px;
     margin-top: 15px;
     background-image: url('https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg');
+    transition: 0.2s;
+}
+
+.todo-item:hover{
+    box-shadow:0 0 5px black;
+    transform: scale(1.03);
 }
 
 .todo-text{
@@ -107,12 +142,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 1200){
 
-    .todo-item{
-        width: 40%;
-    }
-}
 
 @media (max-width: 700px){
     .input{
@@ -120,9 +150,12 @@
     }
     .todo-list{
         width: 95%;
+        margin-bottom: 10px;
     }
-    .todo-item{
-        width: 100%;
+    .container{
+        flex-direction: column;
+        width: 95%;
+
     }
 }
 
