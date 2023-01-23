@@ -142,8 +142,6 @@ body{
     cursor: pointer;
 }
 
-
-
 @media (max-width: 700px){
     .input{
         width: 95%;
@@ -170,3 +168,15 @@ body{
     outline:none;
 }
 
+.drag-active{
+    background-color:rgb(0,221,236)
+
+}
+
+.drag-complete{
+    background-color: rgb(255, 38,0);
+}
+
+.drag{
+    box-shadow: 0 0 20px black;
+}

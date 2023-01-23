@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Todo } from '../model';
+import React, { useEffect, useRef, useState } from 'react';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import { MdDone } from 'react-icons/md';
 import { Draggable } from 'react-beautiful-dnd';
+
+import { Todo } from '../model';
 
 type Props = {
     todo: Todo;
@@ -45,10 +46,10 @@ const TodoItem = ({ todo, todos, setTodos, index }: Props) => {
 
     return (
         <Draggable draggableId={todo.id.toString()} index={index}>
-
             {
-                (provided) => (
-                    <form className="todo-item" onSubmit={(e) => handleEdit(e, todo.id)}
+                (provided, snapshot) => (
+                    <form className={`todo-item ${ snapshot.isDragging?'drag' :'' }`}
+                        onSubmit={(e) => handleEdit(e, todo.id)}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
